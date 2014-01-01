@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/settings"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF5F5F5"
+    android:scrollbars="none" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF5F5F5"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip"
+        android:paddingTop="10dip"
+        android:scrollbars="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/section1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/content_bg" >
+
+            <TextView
+                android:id="@+id/txtOptionLabel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="录入营业数据" />
+
+            <RelativeLayout
+                android:id="@+id/wrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dip" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <EditText
+                            android:id="@+id/editYear"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="年" />
+
+                        <EditText
+                            android:id="@+id/editMonth"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:hint="月" />
+                    </LinearLayout>
+
+
+                        <EditText
+                            android:id="@+id/editNum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ems="10"
+                            android:hint="接待人数" >
+                        </EditText>
+
+                        <ListView
+                            android:id="@+id/lvOption"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
+                            android:layout_marginRight="0dp"
+                            android:cacheColorHint="#00000000"
+                            android:divider="@android:color/transparent"
+                            android:dividerHeight="0dp"
+                            android:listSelector="@android:color/transparent"
+                            android:paddingTop="0dp"
+                            android:scrollbarStyle="outsideInset" >
+                        </ListView>
+                        
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="10dip" >
+
+                        <Button
+                            android:id="@+id/btnSave"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/wp_button_small"
+                            android:text="保存"
+                            android:width="100dp" />
+
+                        <Button
+                            android:id="@+id/btnCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/wp_button_small"
+                            android:text="取消"
+                            android:width="100dp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtOptionLabel"
+                android:layout_below="@+id/txtOptionLabel"
+                android:visibility="invisible" >
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#AA111111"
+                    android:gravity="center"
+                    android:padding="8dip" >
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="24dip"
+                        android:layout_height="24dip"
+                        android:layout_marginBottom="6dip"
+                        android:layout_marginTop="6dip"
+                        android:indeterminate="true" />
+
+                    <TextView
+                        android:id="@+id/txt_loading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="8dip"
+                        android:layout_toRightOf="@id/progress"
+                        android:shadowColor="#000000"
+                        android:shadowDx="0"
+                        android:shadowDy=".5"
+                        android:shadowRadius="1"
+                        android:text="正在录入数据"
+                        android:textColor="#FFFFFF" />
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

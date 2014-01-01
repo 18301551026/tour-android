@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_login"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF5F5F5"
+    android:scrollbars="vertical" >
+
+    <RelativeLayout        
+        android:id="@+id/inner_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFF5F5F5"
+        android:paddingBottom="10dip"
+        android:paddingLeft="10dip"
+        android:paddingRight="10dip" >
+
+        <ImageView
+            android:id="@+id/doubanLogo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingBottom="10dip"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:paddingTop="10dip"
+            android:scaleType="centerInside"
+            android:src="@drawable/douban_logo" >
+        </ImageView>
+
+        <RelativeLayout
+            android:id="@+id/section1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/doubanLogo"
+            android:background="@drawable/content_bg"
+            android:paddingTop="5dip" >
+
+            <TextView
+                android:id="@+id/l_section1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="用户登录" />
+
+            <RelativeLayout
+                android:id="@+id/wrapper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/l_section1" >
+
+                <EditText
+                    android:id="@+id/EditTextEmail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/editbox_background"
+                    android:layout_marginTop="10dip"
+                    android:hint="输入用户名"
+                    android:minHeight="40dip"
+                    android:text="" >
+                </EditText>
+
+                <EditText
+                    android:id="@+id/EditTextPassword"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/EditTextEmail"
+                    android:layout_marginTop="10dip"
+                    android:hint="输入密码"
+                    android:minHeight="40dip"
+                    android:password="true"
+                    android:text="" >
+                </EditText>
+				
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/EditTextPassword"
+                    android:gravity="center"
+                    android:paddingBottom="30dip"
+                    android:paddingTop="30dip" >
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wp_button_small"
+                        android:onClick="btnUserLogin"
+                        android:text="登录"
+                        android:width="100dp" >
+                    </Button>
+
+                    <Button
+                         android:onClick="btnUserCancle"
+                        android:id="@+id/btnExit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/wp_button_small"
+                        android:text="返回"
+                        android:width="100dp" >
+                    </Button>
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

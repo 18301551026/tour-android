@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF5F5F5"
+    android:orientation="vertical"
+    android:padding="0px" >
+
+    <include layout="@layout/titlebar" />
+
+    <RelativeLayout
+        android:id="@+id/mainRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.0" >
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/tourlistview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="5.0dip"
+                android:layout_marginRight="3.0dip"
+                android:layout_weight="1.0"
+                android:cacheColorHint="#00000000"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="5.0dip"
+                android:listSelector="@android:color/transparent"
+                android:paddingTop="5.0dip"
+                android:scrollbarStyle="outsideInset" />
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0" >
+
+                <Button
+                    android:id="@+id/bt_pre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="上一页" />
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/bt_pre"
+                    android:text="下一页" />
+
+                <TextView
+                    android:id="@+id/tv_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="12dip"
+                    android:text="页"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:singleLine="true"
+                    android:id="@+id/et_page"
+                    android:layout_width="60dip"
+                    android:maxWidth="80dip"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/tv_page"
+                    android:numeric="integer" />
+
+                <Button
+                    android:id="@+id/bt_jump"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/et_page"
+                    android:text="跳转到" />
+            </RelativeLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:paddingTop="12dip"
+            android:textColor="#aa000000"
+            android:textSize="12sp"
+            android:id="@+id/tv_current_page"
+            android:text="当前页码"
+             >
+        </TextView>
+        <!--
+            显示进度条的布局, 默认情况visibility="invisible" 不可见 
+			当需要网络操作,耗时操作的时候 ,显示
+        -->
+
+        <RelativeLayout
+            android:id="@+id/loading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/mainRL"
+            android:visibility="invisible" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#AA111111"
+                android:gravity="center"
+                android:padding="8dip" >
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    android:layout_width="24dip"
+                    android:layout_height="24dip"
+                    android:layout_marginBottom="6dip"
+                    android:layout_marginTop="6dip"
+                    android:indeterminate="true" />
+
+                <TextView
+                    android:id="@+id/txt_loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="8dip"
+                    android:layout_toRightOf="@id/progress"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy=".5"
+                    android:shadowRadius="1"
+                    android:text="正在下载数据"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
